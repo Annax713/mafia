@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TM - Cricket Premium Community</title>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '3000414727003358');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=3000414727003358&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+body{background:#0a0a0a;display:flex;justify-content:center;color:#fff}
+.page{width:100%;max-width:430px;background:#0a0a0a;padding:28px 18px 22px;min-height:100vh}
+.logo{display:flex;justify-content:center;align-items:center;font-size:52px;font-weight:900}
+.logo span{color:#3b82ff;margin-left:2px}
+.hero{text-align:center;margin-top:28px}
+.hero h2{font-size:27px;font-weight:800}
+.hero p{color:#8a9bb8;font-size:15px;margin-top:10px}
+.stats{display:flex;gap:10px;margin-top:26px}
+.stat{flex:1;background:#15151c;border:1px solid #242433;border-radius:14px;padding:14px 6px;text-align:center}
+.stat .ico{font-size:20px;color:#3b82ff;margin-bottom:6px}
+.stat b{display:block;font-size:26px;font-weight:800}
+.stat span{font-size:13px;color:#8a9bb8}
+.timer-box{margin-top:20px;text-align:center;border:1.5px dashed #3b82ff;border-radius:12px;padding:14px;color:#3b82ff;font-size:15px;background:#15151c}
+.timer-box b{font-size:17px}
+.features{margin-top:28px}
+.features h3{font-size:22px;font-weight:800;margin-bottom:16px}
+.card{display:flex;gap:14px;align-items:center;background:#15151c;border:1px solid #242433;border-radius:14px;padding:16px 14px;margin-bottom:14px}
+.card .ico{font-size:22px;color:#3b82ff;width:32px;text-align:center}
+.card b{font-size:15px;display:block}
+.card span{font-size:12.5px;color:#8a9bb8;margin-top:3px;display:block}
+.btn{display:block;width:100%;margin-top:26px;background:#2874ff;color:#fff;text-align:center;padding:18px 0;border-radius:14px;font-size:22px;font-weight:900;text-decoration:none;box-shadow:0 8px 30px rgba(40,116,255,0.4)}
+.footer-ads{margin-top:24px;text-align:center;font-size:12px;color:#5a6a88}
+.footer-ads a{color:#5a6a88;text-decoration:none;font-weight:700}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="logo">TM<span>💙</span></div>
+  <div class="hero">
+    <h2>Cricket Premium Community</h2>
+    <p>Join the most elite cricket community</p>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="ico">🏟️</div><b>85K+</b><span>Fans</span></div>
+    <div class="stat"><div class="ico">🕒</div><b>24/7</b><span>Updates</span></div>
+    <div class="stat"><div class="ico">📊</div><b>97%</b><span>Engagement</span></div>
+  </div>
+  <div class="timer-box">Auto Joining in <b id="timer">5</b> seconds</div>
+  <div class="features">
+    <h3>Premium Features</h3>
+    <div class="card"><div class="ico">📶</div><div><b>Live Cricket Updates</b><span>Real-time scores & match highlights</span></div></div>
+    <div class="card"><div class="ico">🛡️</div><div><b>TM Exclusive Community</b><span>Private chat with pro cricket fans & experts</span></div></div>
+    <div class="card"><div class="ico">🏅</div><div><b>TM Army</b><span>Get exclusive access, tips & insider news</span></div></div>
+  </div>
+  <a id="joinBtn" class="btn" href="https://t.me/+GV8OS92MkCFhYzI1" target="_blank">JOIN NOW</a>
+  <div class="footer-ads">Ads by <a href="https://t.me/Dr_ANNA0" target="_blank">@Dr_ANNA0</a></div>
+</div>
+
+<script>
+const TELEGRAM_LINK = "https://t.me/+GV8OS92MkCFhYzI1";
+let timeLeft = 5;
+const timerEl = document.getElementById('timer');
+let redirected = false;
+function doTrackAndRedirect(){
+  if(redirected) return;
+  redirected = true;
+  try{
+    fbq('track', 'Lead');
+    fbq('track', 'Subscribe');
+    fbq('track', 'CompleteRegistration');
+  }catch(e){}
+  window.location.href = TELEGRAM_LINK;
+}
+document.getElementById('joinBtn').addEventListener('click', function(e){
+  e.preventDefault();
+  doTrackAndRedirect();
+});
+const countdown = setInterval(()=>{
+  timeLeft--;
+  if(timerEl) timerEl.textContent = timeLeft;
+  if(timeLeft <= 0){
+    clearInterval(countdown);
+    doTrackAndRedirect();
+  }
+}, 1000);
+</script>
+</body>
+</html>
